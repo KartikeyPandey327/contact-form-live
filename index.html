@@ -1,25 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
-    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Live Global Weather Dashboard</title>
 </head>
 <body>
-    <header>
-        <h1>Mini Tech Project</h1>
-        <input type="text", id="search-input", placeholder="Seacrh products">
-    </header>
-    <main>
-        <div id="product-grid"></div>
-        <aside id="cart-section">
-            <h2>Cart Summary</h2>
-            <span id="cart-count">0</span>
-            <span id="cart-total">$0.00</span>
-            <div id="cart-items"></div>
-        </aside>
-    </main>            
+    <header id="navigation-bar"><h1> Global Weather Tracker </h1></header>
+    
+    <form id="weather-form">
+        <input type="text" id="city-input" placeholder="Enter city Name" required autocomplete="off">
+        <button type="submit">Get Weather</button>
+    </form>
 
     
+    
+    <div id="weather-dashboard">
+        <div id="hero-card" class="glass-card">
+            <h2 id="city-display">Weather for --</h2>
+            <p id="country-display"></p>
+            <div class="hero-bottom">
+                 <h1 id="temp-display">--°C</h1>
+                 <div id="weather-icon">🌙☁️</div>
+            </div>
+           
+        </div>
+        <div id="stats-grid">
+            <article class="glass-card stats-card">
+                <div class="stat-icon icon-pink">🎯</div>
+                <h3 id="lat-display">--</h3> 
+                <p>Latitude</p>
+            </article>
+            <article class="glass-card stats-card">
+                <div class="stat-icon icon-orange">🌐</div>
+                <h3 id="lon-display">--</h3>
+                <p>Longitude</p>
+            </article>
+            <article class="glass-card stats-card">
+                <div class="stat-icon icon-purple">💧</div>
+                <h3 id="humidity-display">--</h3> 
+                <p>Humidity</p>
+            </article>
+            <article class="glass-card stats-card">
+                <div class="stat-icon icon-cyan">💨</div>
+                <h3 id="wind-display">--</h3>
+                <p>Wind Speed</p>
+            </article>
+        </div>
+    </div>
     <script src="script.js"></script>
 </body>
 </html>

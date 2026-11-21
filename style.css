@@ -1,0 +1,177 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+    box-sizing: border-box;
+}
+
+body{
+    min-height: 100vh;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+   /* The Nebula Cosmic Background */
+    background: 
+        radial-gradient(circle at 15% 20%, rgba(168, 85, 247, 0.3) 0%, transparent 40%),
+        radial-gradient(circle at 85% 25%, rgba(34, 211, 238, 0.25) 0%, transparent 35%),
+        radial-gradient(circle at 25% 75%, rgba(236, 72, 153, 0.25) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(59, 130, 246, 0.25) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, rgba(99, 102, 241, 0.15) 0%, transparent 60%),
+        linear-gradient(135deg, #09061a 0%, #120b2e 50%, #170b28 100%);
+    background-attachment: fixed;
+    
+}
+
+#weather-form{
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+    max-width: 480px;
+    margin: 25px 0;
+    backdrop-filter: blur(16px);
+    border-radius: 30px;
+    padding: 6px 8px 6px 20px;
+    background: rgba(255, 255, 255, 0.08);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+#city-input{
+    flex: 1;
+    background: transparent;
+    border: none;
+    outline: none;
+    color: white;
+    font-size: 1rem;
+    padding: 0 14px;
+}
+
+#city-input::placeholder { color: rgba(255, 255, 255, 0.5); }
+
+#weather-form button {
+    border: none;
+    color: white;
+    font-weight: 600;
+    padding: 10px 22px;
+    border-radius: 25px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #c026d3, #22d3ee); 
+}
+.glass-card{
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 24px;
+    padding: 24px;
+}
+#weather-dashboard{
+    display: flex;
+    gap: 24px;
+    width: 100%;
+    max-width: 900px;
+    align-items: stretch;
+}
+#stats-grid{
+    flex: 1;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+.glass-card, .stats-card{
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+}
+#hero-card{
+    flex: 1.1;
+    display: flex;  
+    flex-direction: column;
+    justify-content: space-around;
+}
+#city-display{
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+#county-display{
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 1rem;
+    margin-top: 4px;
+}
+#temp-display{
+    font-size: 4rem;
+    font-weight: 800;
+    letter-spacing: -1px;
+}
+.stats-card h3{
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 4px;
+}
+.stat-card p{
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.85rem;
+    font-weight: 500;   
+}
+.stat-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.1rem;
+    margin-bottom: 12px;
+}
+
+/* Glowing Neon Borders & Shadows */
+.icon-pink {
+    background: rgba(236, 72, 153, 0.15);
+    border: 1px solid rgba(236, 72, 153, 0.35);
+    box-shadow: 0 0 15px rgba(236, 72, 153, 0.3);
+}
+
+.icon-orange {
+    background: rgba(245, 158, 11, 0.15);
+    border: 1px solid rgba(245, 158, 11, 0.35);
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.3);
+}
+
+.icon-purple {
+    background: rgba(168, 85, 247, 0.15);
+    border: 1px solid rgba(168, 85, 247, 0.35);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.3);
+}
+
+.icon-cyan {
+    background: rgba(6, 182, 212, 0.15);
+    border: 1px solid rgba(6, 182, 212, 0.35);
+    box-shadow: 0 0 15px rgba(6, 182, 212, 0.3);
+}
+.hero-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+
+#weather-icon {
+    font-size: 3.2rem;
+    filter: drop-shadow(0 0 20px rgba(168, 85, 247, 0.45));
+}
+
+@media (max-width: 768px) {
+    body{
+        padding: 30px 16px;/*keeps content from sticking to the edges of the phone glass*/
+        justify-content: flex-start; /*allows smooth vertical scrolling*/
+    }
+    #weather-dashboard{
+        flex-direction: column; /*stacks the Hero Card on top and the 2x2 grid underneath!*/
+    } 
+    #navigation-bar h1{
+       font-size: 1.6rem;
+        text-align: center;
+    }  
+}
+
